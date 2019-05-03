@@ -5,18 +5,21 @@ const cors = require('cors');
 const corsOptions = require('./cors-whitelist');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
-const winston = require('winston');
 const logger = require('./logger');
 const bookmarkRouter = require('./bookmark-router/bookmarkRouter');
 
 const app = express();
 
-const morganOption = (NODE_ENV === 'production')
-  ? 'tiny'
-  : 'common';
-
-
+// =============================================================================
+// set up morgan messages
+// =============================================================================
+const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'dev';
 app.use(morgan(morganOption));
+// =============================================================================
+// 
+// =============================================================================
+
+
 app.use(cors({origin: corsOptions}));
 app.use(express.json());
 app.use(helmet());
@@ -59,8 +62,9 @@ app.use(function errorHandler(error, req, res, next) {
     if (NODE_ENV === 'production') {
         response = { error: { message: 'server error' } }
     } else {
-        console.error(error)
-        response = { message: error.message, error }
+        console.error(error);
+        logger.error(error.message);
+        response = { message: error.message, error };
     }
 
     if(error.type === 'CORS') {
