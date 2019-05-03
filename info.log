@@ -1,0 +1,4 @@
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Bookmark with id cb56f5f9-5949-4cc4-a601-3fd1658c3451 created","level":"info"}
+{"message":"Bookmark with id cjkzyzeqh0001lxygb8mhqvh3 deleted.","level":"info"}
+{"message":"Bookmark with id cjkzyzeqh0001lxygb8mhqvh3 not found.","level":"error"}

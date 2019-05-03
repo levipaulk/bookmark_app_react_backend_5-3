@@ -6,6 +6,8 @@ const corsOptions = require('./cors-whitelist');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
 const winston = require('winston');
+const logger = require('./logger');
+const bookmarkRouter = require('./bookmark-router/bookmarkRouter');
 
 const app = express();
 
@@ -19,23 +21,38 @@ app.use(cors({origin: corsOptions}));
 app.use(express.json());
 app.use(helmet());
 
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'info.log' })
-  ]
+// =============================================================================
+// API_KEY verification
+// =============================================================================
+
+app.use(function validateBearerToken(req, res, next) {
+  const apiToken = process.env.REACT_APP_API_KEY;
+  const authToken = req.get('Authorization');
+
+  if (!authToken || authToken.split(' ')[1] !== apiToken) {
+    logger.error(`Unauthorized request to path: ${req.path}`);
+    return res.status(401).json({ error: 'Unauthorized request'})
+  }
+  next()
 });
 
-if(NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-};
+// =============================================================================
+// Hello world
+// =============================================================================
 
 app.get('/', (req, res) => {
     res.send('Hello, boilerplate!')
 });
+
+// =============================================================================
+// Bookmarks endpoint
+// =============================================================================
+
+app.use('/bookmarks', bookmarkRouter);
+
+// =============================================================================
+// Error handler
+// =============================================================================
 
 app.use(function errorHandler(error, req, res, next) {
     let response;
