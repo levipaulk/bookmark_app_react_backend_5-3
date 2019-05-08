@@ -2,3 +2,36 @@
 {"message":"Bookmark with id cb56f5f9-5949-4cc4-a601-3fd1658c3451 created","level":"info"}
 {"message":"Bookmark with id cjkzyzeqh0001lxygb8mhqvh3 deleted.","level":"info"}
 {"message":"Bookmark with id cjkzyzeqh0001lxygb8mhqvh3 not found.","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"rec is not defined","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"rec is not defined","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"next is not defined","level":"error"}
+{"message":"rec is not defined","level":"error"}
+{"message":"isWebUri is not defined","level":"error"}
+{"message":"id is not defined","level":"error"}
+{"message":"Bookmark with id dd75bdf6-7148-4478-a8a0-a356a80adbbe created","level":"info"}
+{"message":"Bookmark with id ac997e9f-404a-4cc3-aebe-a7dc900cff5f created","level":"info"}
+{"message":"Bookmark with id 0 not found.","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/123456","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/123456","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/123456","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Unauthorized request to path: /","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/123456","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks/2","level":"error"}
+{"message":"Bookmark with id 123456 not found.","level":"error"}
